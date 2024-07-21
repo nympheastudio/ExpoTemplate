@@ -47,16 +47,16 @@ project-root/
 ├── App.js
 ├── src/
 │   ├── components/
-│   │   └── ExampleComponent.js
 │   ├── navigator/
 │   │   └── Navigator.js
 │   ├── store/
 │   │   └── jotaiState.js
-│   ├── utils/
+│   ├── hooks/
 │   │   └── atomWithAsyncStorage.js
 │   └── views/
 │       ├── Home.js
 │       └── ProfileScreen.js
+│       └── ExampleComponent.js
 ```
 
 ## Adding New Screens
