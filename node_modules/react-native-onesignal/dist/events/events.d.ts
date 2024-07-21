@@ -1,0 +1,11 @@
+export declare const NOTIFICATION_WILL_SHOW = "OneSignal-notificationWillShowInForeground";
+export declare const NOTIFICATION_OPENED = "OneSignal-remoteNotificationOpened";
+export declare const IN_APP_MESSAGE_CLICKED = "OneSignal-inAppMessageClicked";
+export declare const IN_APP_MESSAGE_WILL_DISPLAY = "OneSignal-inAppMessageWillDisplay";
+export declare const IN_APP_MESSAGE_DID_DISPLAY = "OneSignal-inAppMessageDidDisplay";
+export declare const IN_APP_MESSAGE_WILL_DISMISS = "OneSignal-inAppMessageWillDismiss";
+export declare const IN_APP_MESSAGE_DID_DISMISS = "OneSignal-inAppMessageDidDismiss";
+export declare const PERMISSION_CHANGED = "OneSignal-permissionChanged";
+export declare const SUBSCRIPTION_CHANGED = "OneSignal-subscriptionChanged";
+export declare const EMAIL_SUBSCRIPTION_CHANGED = "OneSignal-emailSubscriptionChanged";
+export declare const SMS_SUBSCRIPTION_CHANGED = "OneSignal-smsSubscriptionChanged";

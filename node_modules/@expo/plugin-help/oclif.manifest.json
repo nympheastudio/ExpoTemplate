@@ -1,0 +1,30 @@
+{
+  "version": "5.1.23",
+  "commands": {
+    "help": {
+      "id": "help",
+      "description": "Display help for <%= config.bin %>.",
+      "strict": false,
+      "pluginName": "@expo/plugin-help",
+      "pluginAlias": "@expo/plugin-help",
+      "pluginType": "core",
+      "aliases": [],
+      "flags": {
+        "nested-commands": {
+          "name": "nested-commands",
+          "type": "boolean",
+          "char": "n",
+          "description": "Include all nested commands in the output.",
+          "allowNo": false
+        }
+      },
+      "args": {
+        "command": {
+          "name": "command",
+          "description": "Command to show help for.",
+          "required": false
+        }
+      }
+    }
+  }
+}

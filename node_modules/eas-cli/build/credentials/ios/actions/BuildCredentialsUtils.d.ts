@@ -1,0 +1,11 @@
+import { AppleDistributionCertificateFragment, AppleProvisioningProfileFragment, AppleTeamFragment, IosDistributionType as GraphQLIosDistributionType, IosAppBuildCredentialsFragment } from '../../../graphql/generated';
+import { CredentialsContext } from '../../context';
+import { AppLookupParams } from '../api/graphql/types/AppLookupParams';
+import { App, Target } from '../types';
+export declare function getAllBuildCredentialsAsync(ctx: CredentialsContext, app: AppLookupParams): Promise<IosAppBuildCredentialsFragment[]>;
+export declare function getBuildCredentialsAsync(ctx: CredentialsContext, app: AppLookupParams, iosDistributionType: GraphQLIosDistributionType): Promise<IosAppBuildCredentialsFragment | null>;
+export declare function getProvisioningProfileAsync(ctx: CredentialsContext, app: AppLookupParams, iosDistributionType: GraphQLIosDistributionType): Promise<AppleProvisioningProfileFragment | null>;
+export declare function getDistributionCertificateAsync(ctx: CredentialsContext, app: AppLookupParams, iosDistributionType: GraphQLIosDistributionType): Promise<AppleDistributionCertificateFragment | null>;
+export declare function assignBuildCredentialsAsync(ctx: CredentialsContext, app: AppLookupParams, iosDistributionType: GraphQLIosDistributionType, distCert: AppleDistributionCertificateFragment, provisioningProfile: AppleProvisioningProfileFragment, appleTeam?: AppleTeamFragment): Promise<IosAppBuildCredentialsFragment>;
+export declare function getAppFromContextAsync(ctx: CredentialsContext): Promise<App>;
+export declare function getAppLookupParamsFromContextAsync(ctx: CredentialsContext, target: Target): Promise<AppLookupParams>;

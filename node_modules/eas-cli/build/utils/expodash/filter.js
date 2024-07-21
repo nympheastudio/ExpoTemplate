@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.truthy = void 0;
+/** A predicate to filter arrays on truthy values, returning a type-safe array. */
+function truthy(value) {
+    return !!value;
+}
+exports.truthy = truthy;
