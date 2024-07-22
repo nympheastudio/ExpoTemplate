@@ -1,8 +1,11 @@
+// src/views/DataScreen.js
 import React from 'react';
-import { View, StyleSheet, ActivityIndicator, Image } from 'react-native';
+import { useAtom } from 'jotai';
+import { StyleSheet, ActivityIndicator, Image, View } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 import { FlashList } from '@shopify/flash-list';
 import { YStack, H1, H2, Paragraph } from 'tamagui';
+import { primaryColorAtom, fontSizeAtom } from '../store/settingsAtoms';
 
 const fetchData = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -16,12 +19,15 @@ const DataScreen = () => {
     queryFn: fetchData,
   });
 
+  const [primaryColor] = useAtom(primaryColorAtom);
+  const [fontSize] = useAtom(fontSizeAtom);
+
   if (isLoading) return <ActivityIndicator size="large" color="#0000ff" />;
   if (error) return <Text style={styles.text}>Error: {error.message}</Text>;
 
   return (
     <View style={styles.container}>
-      <H1 style={[styles.heading, styles.text]}>Posts</H1>
+      <H1 style={[styles.heading, { color: primaryColor, fontSize }]}>Posts</H1>
       <FlashList
         data={data}
         estimatedItemSize={150}
@@ -31,8 +37,10 @@ const DataScreen = () => {
               source={{ uri: `https://picsum.photos/200?random=${item.id}` }}
               style={styles.image}
             />
-            <H2 style={[styles.title, styles.text]}>{item.title}</H2>
-            <Paragraph style={[styles.body, styles.text]}>{item.body}</Paragraph>
+            <H2 style={[styles.title, { color: primaryColor, fontSize }]}>{item.title}</H2>
+            <Paragraph style={[styles.body, { color: primaryColor, fontSize }]}>
+              {item.body}
+            </Paragraph>
           </YStack>
         )}
         keyExtractor={(item) => item.id.toString()}

@@ -1,6 +1,5 @@
-// tamagui.config.js
 import { createTamagui } from 'tamagui';
-import { tokens, themes } from '@tamagui/themes';
+import { tokens, themes as defaultThemes } from '@tamagui/themes';
 import { createFont } from '@tamagui/core';
 
 const headingFont = createFont({
@@ -62,6 +61,27 @@ const bodyFont = createFont({
     9: 52,
   },
 });
+
+const themes = {
+  light: {
+    ...defaultThemes.light,
+    color: '#000', // Default text color for light theme
+    background: '#fff', // Background color for light theme
+    button: {
+      background: '#6200ea', // Default button background for light theme
+      color: '#fff', // Default button text color for light theme
+    },
+  },
+  dark: {
+    ...defaultThemes.dark,
+    color: '#fff', // Default text color for dark theme
+    background: '#000', // Background color for dark theme
+    button: {
+      background: '#bb86fc', // Default button background for dark theme
+      color: '#000', // Default button text color for dark theme
+    },
+  },
+};
 
 const config = createTamagui({
   tokens,
