@@ -1,66 +1,18 @@
+// src/views/Home.js
 import React from 'react';
+import { View, Text, Button } from 'react-native';
 import { useAtom } from 'jotai';
-import { homeCountAtom } from '../store/jotaiState';
-import { primaryColorAtom, fontSizeAtom } from '../store/settingsAtoms';
-import { YStack, H1, H2, styled,Button } from 'tamagui';
-
-const StyledButton = styled(Button, {
-  borderColor: '$color',
-  borderWidth: 1,
-  borderRadius: 8,
-  paddingVertical: 10,
-  paddingHorizontal: 20,
-  marginVertical: 5,
-  color: '$color',
-});
+import { homeCountAtom } from '../store/jotaiState'; // Adjust the path as needed
 
 const Home = ({ navigation }) => {
   const [count, setCount] = useAtom(homeCountAtom);
-  const [primaryColor] = useAtom(primaryColorAtom);
-  const [fontSize] = useAtom(fontSizeAtom);
 
   return (
-    <YStack f={1} ai="center" jc="center" p="$4" space="$4">
-      <H1 style={{ color: primaryColor }}>Home Screen</H1>
-      <H2 style={{ color: primaryColor, fontSize: fontSize }}>Count: {count}</H2>
-      <StyledButton
-        size="$4"
-        onPress={() => setCount(count + 1)}
-        style={{ backgroundColor: primaryColor, color: '#fff' }}
-      >
-        Increment
-      </StyledButton>
-      <YStack space="$3">
-        <StyledButton
-          size="$4"
-          onPress={() => navigation.navigate('Example')}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          Go to Example Component
-        </StyledButton>
-        <StyledButton
-          size="$4"
-          onPress={() => navigation.navigate('Data')}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          Go to Data Screen
-        </StyledButton>
-        <StyledButton
-          size="$4"
-          onPress={() => navigation.navigate('Profile')}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          Go to Profile Screen
-        </StyledButton>
-        <StyledButton
-          size="$4"
-          onPress={() => navigation.navigate('Settings')}
-          style={{ backgroundColor: primaryColor, color: '#fff' }}
-        >
-          Go to Settings Screen
-        </StyledButton>
-      </YStack>
-    </YStack>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>{count}</Text>
+      <Button title="Increment" onPress={() => setCount(count + 1)} />
+      <Button title="Go to Example Component" onPress={() => navigation.navigate('Example')} />
+    </View>
   );
 };
 

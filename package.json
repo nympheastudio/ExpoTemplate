@@ -85,8 +85,6 @@
     "react-native-vector-icons": "7.1.0",
     "react-native-web": "~0.19.6",
     "react-native-webview": "13.8.6",
-    "tamagui": "^1.102.3",
-    "tamagui-expo": "^1.0.1",
     "typescript": "~5.3.3"
   },
   "devDependencies": {
