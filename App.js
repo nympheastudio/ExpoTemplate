@@ -9,7 +9,6 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <JotaiProvider>
         <Navigator />
-        <ExampleComponent />
       </JotaiProvider>
     </GestureHandlerRootView>
   );
